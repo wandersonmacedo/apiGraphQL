@@ -28,8 +28,6 @@ class CreatePhonePlan extends Mutation
     public function resolve($root, $args) : array
     {
         $plan = new Plan();
-
-        $plan->saveNewPlan($args);
-        return ['status' => json_encode($args)];
+        return $plan->saveNewPlan($args);
     }
 }

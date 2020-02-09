@@ -27,11 +27,11 @@ class PlanInput extends InputType
             ],
             'minute_amount' => [
                 'type' => Type::nonNull(Type::string()),
-                'description' => 'amount of minutes avaiable to make calls',
+                'description' => 'amount of minutes available to make calls',
             ],
             'internet_amount' => [
                 'type' => Type::nonNull(Type::string()),
-                'description' => 'Amount of internet avaiable on this plan',
+                'description' => 'Amount of internet available on this plan',
             ],
             'price' => [
                 'type' => Type::nonNull(Type::float()),
@@ -42,8 +42,12 @@ class PlanInput extends InputType
                 'description' => 'company that is selling the plan',
             ],
             'plan_type' => [
-                'type' => Type::nonNull(GraphQL::type('planInputtype')),
+                'type' => Type::nonNull(GraphQL::type('planInputType')),
                 'description' => 'type of the plan',
+            ],
+            'available_location' => [
+                'type' => Type::nonNull(GraphQL::type('DDD')),
+                'description' => "available ddd's for plans",
             ]
         ];
     }

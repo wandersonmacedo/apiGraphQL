@@ -11,7 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(createTypeSeeder::class);
+         $this->call(CreateTypeSeeder::class);
          $this->call(CreateOperatorSeed::class);
+         $this->call(AvailablePrefixForPlan::class);
     }
 }

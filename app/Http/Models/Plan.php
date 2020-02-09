@@ -14,6 +14,7 @@ class Plan extends Model
         'price',
         'type_id',
         'operator_id',
+        'available_location'
     ];
 
 
@@ -35,7 +36,8 @@ class Plan extends Model
             "internet_amount" => $args["internet_amount"],
             "price" => $args["price"],
             "type_id" => $type->getTypeByCode($args["plan_type"]),
-            "operator_id" => $operator->getTypeByCode($args["operating_company"])
+            "operator_id" => $operator->getTypeByCode($args["operating_company"]),
+            "available_location" => $args["available_location"]
 
         ]);
         if($this->save()){

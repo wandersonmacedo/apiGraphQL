@@ -12,7 +12,7 @@ class OperatorCompanies extends GraphQLType
 
     protected $attributes = [
         'name' => 'OperatorCompany',
-        'description' => 'Operator companies avaiable',
+        'description' => 'Operator companies available',
         'values' => [
             'VIVO' => 'VIVO',
             'TIM' => 'TIM',

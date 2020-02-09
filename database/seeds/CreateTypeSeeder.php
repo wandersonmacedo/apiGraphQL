@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Http\Models\Type;
 
-class createTypeSeeder extends Seeder
+class CreateTypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
