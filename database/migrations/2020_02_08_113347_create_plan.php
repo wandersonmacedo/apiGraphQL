@@ -15,6 +15,7 @@ class CreatePlan extends Migration
     {
         Schema::create('plan', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('plan_name');
             $table->string('minute_amount');
             $table->string('internet_amount');
             $table->float('price');

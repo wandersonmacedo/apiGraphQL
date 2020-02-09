@@ -28,6 +28,6 @@ class CreateTypePlan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_plan');
+        Schema::dropIfExists('type');
     }
 }
