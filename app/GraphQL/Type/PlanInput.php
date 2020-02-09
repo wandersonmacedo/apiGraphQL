@@ -7,7 +7,6 @@ namespace App\GraphQL\Type;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\InputType;
-use Tymon\JWTAuth\Facades\JWTAuth;
 
 class PlanInput extends InputType
 {
@@ -27,50 +26,32 @@ class PlanInput extends InputType
                 'description' => 'Plan Name',
             ],
             'minute_amount' => [
-                'type' => Type::nonNull(Type::float()),
-                'description' => 'discount percentage',
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'amount of minutes avaiable to make calls',
             ],
             'internet_amount' => [
-                'type' => Type::float(),
-                'description' => 'Max value permited',
-                'rules' => ['nullable']
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'Amount of internet avaiable on this plan',
             ],
             'price' => [
-                'type' => Type::nonNull(Type::boolean()),
-                'description' => 'if the coupon is acumulative',
+                'type' => Type::nonNull(Type::float()),
+                'description' => 'plan price',
             ],
-            'beginDate' => [
-                'type' => Type::nonNull(Type::string()),
-                'description' => 'day that the coupon begin to be valid',
+            'operating_company' => [
+                'type' => Type::nonNull(GraphQL::type('operatorCompanies')),
+                'description' => 'company that is selling the plan',
             ],
-            'endDate' => [
-                'type' => Type::nonNull(Type::string()),
-                'description' => 'date that the coupon expire',
-            ],
-            'description' => [
-                'type' => Type::string(),
-                'description' => 'description of the coupon',
-                'rules' => ['nullable']
-            ],
-            'products' => [
-                'type' => Type::listOf(GraphQL::type('productInput')),
-                'description' => 'The project current version',
-                'rules' => ['nullable']
-            ],
-            'industry' => [
-                'type' => Type::nonNull(Type::string()),
+            'plan_type' => [
+                'type' => Type::nonNull(GraphQL::type('planInputtype')),
+                'description' => 'type of the plan',
             ]
         ];
-        $user = JWTAuth::parseToken()->authenticate();
-        if ($user->level != 'master') {
-            unset($this->arrFields['industry']);
-        }
     }
 
     public function fields(): array
     {
         return $this->arrFields;
     }
-}
+
 
 }

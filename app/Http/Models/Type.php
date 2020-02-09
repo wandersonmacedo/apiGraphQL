@@ -12,4 +12,8 @@ class Type extends Model
     public function getType(){
         return $this->morphTo();
     }
+
+    public function getTypeByCode($cod){
+        return Self::where('cod','=',$cod)->first()->id;
+    }
 }

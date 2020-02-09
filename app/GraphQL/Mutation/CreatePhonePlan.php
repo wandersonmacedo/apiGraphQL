@@ -1,5 +1,7 @@
 <?php
+namespace App\GraphQL\Mutation;
 
+use App\Http\Models\Plan;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Mutation;
@@ -9,7 +11,7 @@ class CreatePhonePlan extends Mutation
 
     public function type() : Type
     {
-        return Type::listOf(GraphQL::type('status'));
+        return GraphQL::type('status');
     }
 
     public function args() : array
@@ -17,7 +19,7 @@ class CreatePhonePlan extends Mutation
         return [
             'plan' => [
                 'name' => 'plan',
-                'type' => Type::nonNull(Type::listOf(GraphQL::type('planInput'))),
+                'type' => Type::nonNull(GraphQL::type('planInput')),
                 'description' => "its a plan making mutation",
             ],
 
@@ -25,6 +27,9 @@ class CreatePhonePlan extends Mutation
     }
     public function resolve($root, $args) : array
     {
+        $plan = new Plan();
 
+        $plan->saveNewPlan($args);
+        return ['status' => json_encode($args)];
     }
 }

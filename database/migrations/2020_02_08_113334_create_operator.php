@@ -16,6 +16,7 @@ class CreateOperator extends Migration
         Schema::create('operator', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('cod')->unique();
             $table->timestamps();
         });
     }

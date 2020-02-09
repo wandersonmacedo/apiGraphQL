@@ -17,7 +17,7 @@ class StatusType extends GraphQLType
     public function fields(): array
     {
         return [
-            'version' => [
+            'status' => [
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'save state',
             ],

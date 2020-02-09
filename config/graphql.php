@@ -104,7 +104,7 @@ return [
                 'version' => App\GraphQL\Query\VersionQuery::class,
             ],
             'mutation' => [
-                // 'example_mutation'  => ExampleMutation::class,
+                'createPlan'  => App\GraphQL\Mutation\CreatePhonePlan::class,
             ],
             'middleware' => [],
             'method' => ['get', 'post'],
@@ -123,6 +123,9 @@ return [
     'types' => [
          'version' => \App\GraphQL\Type\VersionType::class,
          'status'  => \App\GraphQL\Type\StatusType::class,
+         'operatorCompanies'  => \App\GraphQL\Type\OperatorCompanies::class,
+         'planInput'  => \App\GraphQL\Type\PlanInput::class,
+         'planInputtype'  => \App\GraphQL\Type\PlanInputTypes::class,
         // 'relation_example'  => ExampleRelationType::class,
         // \Rebing\GraphQL\Support\UploadType::class,
     ],

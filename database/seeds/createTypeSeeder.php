@@ -16,14 +16,17 @@ class createTypeSeeder extends Seeder
         Type::create([
             'name' => 'Controle',
             'desc' => 'Plano Controle',
+            'cod' => 'CONTROLE',
         ]);
         Type::create([
             'name' => 'Pós',
             'desc' => 'Plano Pós Pago',
+            'cod' => 'POS',
         ]);
         Type::create([
             'name' => 'Pre',
             'desc' => 'Plano Pre Pago',
+            'cod' => 'PRE',
         ]);
     }
 }
