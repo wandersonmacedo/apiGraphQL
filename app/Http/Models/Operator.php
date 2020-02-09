@@ -12,12 +12,10 @@ class Operator extends Model
 
 
 
-    public function avaiablePlans(){
-        return $this->morphMany('App/Http/Models/Plan','avaiablePlans');
+    public function getOperatorByCode($cod){
+        return Self::where('cod',$cod)->firstOrFail()->id;
     }
 
-    public function getTypeByCode($cod){
-        return Operator::where('cod',$cod)->firstOrFail()->id;
-    }
+
 
 }

@@ -18,7 +18,6 @@ class CreatePlan extends Migration
             $table->string('plan_name');
             $table->string('minute_amount');
             $table->string('internet_amount');
-            $table->string('available_location');
             $table->float('price');
             $table->unsignedBigInteger('type_id');
             $table->unsignedBigInteger('operator_id');

@@ -102,6 +102,7 @@ return [
         'default' => [
             'query' => [
                 'version' => App\GraphQL\Query\VersionQuery::class,
+                'findPlans' => App\GraphQL\Query\FindPlansQuery::class,
             ],
             'mutation' => [
                 'createPlan'  => App\GraphQL\Mutation\CreatePhonePlan::class,
@@ -127,6 +128,8 @@ return [
          'planInput'  => \App\GraphQL\Type\PlanInput::class,
          'planInputType'  => \App\GraphQL\Type\PlanInputTypes::class,
          'DDD'  => \App\GraphQL\Type\PrefixInputTypeEnum::class,
+         'planReadType'  => \App\GraphQL\Type\PlanReadType::class,
+         'AvailableLocationDDD' => \App\GraphQL\Type\AvailableLocationDDD::class,
         // 'relation_example'  => ExampleRelationType::class,
         // \Rebing\GraphQL\Support\UploadType::class,
     ],
