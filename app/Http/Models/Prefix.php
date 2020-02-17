@@ -8,4 +8,10 @@ class Prefix extends Model
 {
     //
     protected $table = 'prefix';
+
+
+    public function planPrefix()
+    {
+        return $this->hasMany(PlanPrefixAvailable::class);
+    }
 }

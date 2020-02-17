@@ -22,6 +22,11 @@ class CreatePhonePlan extends Mutation
                 'type' => Type::nonNull(GraphQL::type('planInput')),
                 'description' => "its a plan making mutation",
             ],
+            'plan_id' => [
+                'name' => 'plan_id',
+                'type' => Type::int(),
+                'description' => "if you wanna edit a specific plan just put thee plan id here and fill the fields",
+            ],
 
         ];
     }

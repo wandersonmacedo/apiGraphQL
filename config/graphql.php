@@ -130,6 +130,7 @@ return [
          'DDD'  => \App\GraphQL\Type\PrefixInputTypeEnum::class,
          'planReadType'  => \App\GraphQL\Type\PlanReadType::class,
          'AvailableLocationDDD' => \App\GraphQL\Type\AvailableLocationDDD::class,
+         'operatorType' => \App\GraphQL\Type\OperatorType::class,
         // 'relation_example'  => ExampleRelationType::class,
         // \Rebing\GraphQL\Support\UploadType::class,
     ],

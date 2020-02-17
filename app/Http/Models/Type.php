@@ -9,8 +9,8 @@ class Type extends Model
     //
     protected $table = 'type';
 
-    public function getType(){
-        return $this->morphTo();
+    public function plan(){
+        return $this->hasMany(Plan::class);
     }
 
     public function getTypeByCode($cod){

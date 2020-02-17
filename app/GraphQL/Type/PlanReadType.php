@@ -18,6 +18,10 @@ class PlanReadType extends GraphQLType
     public function __construct()
     {
         $this->arrFields = [
+            'plan_id' => [
+                'type' => Type::int(),
+                'description' => 'Plan identification number',
+            ],
             'plan_name' => [
                 'type' => Type::string(),
                 'description' => 'Plan Name',
@@ -36,7 +40,7 @@ class PlanReadType extends GraphQLType
             ],
             'operator_name' => [
                 'type' => Type::string(),
-                'description' => 'company that is selling the plan',
+                'description' => 'operator company nme ',
             ],
             'type_name' => [
                 'type' => Type::string(),
